@@ -25,7 +25,7 @@ UPDATES
 20251008 New tag, v1.0.0 "database - frontend connection ok, routing ok, replicating es-views"  
 20251008 New tag, v1.0.1 "Added additional svelte-views"  
 20251013 New tag, v1.0.2 "SveltKit routing and views implemented, old build left-overs cleaned"  
-20251013 New tag, v1.0.3 ""  
+20251013 New tag, v1.0.3 "updateOne fixed, all routes functional"    
 
 
 ######
