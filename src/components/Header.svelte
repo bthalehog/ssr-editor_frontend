@@ -1,7 +1,8 @@
 <header>
     <h1>SSR Editor</h1>
     <navigation>
-        <a href="/">Start</a>
-        <a href="/create">Nytt dokument</a>
+        <a href="/documents">Start</a>
+        <a href="/documents/list">Lista</a>
+        <a href="/documents/create">Nytt dokument</a>
     </navigation>
 </header>

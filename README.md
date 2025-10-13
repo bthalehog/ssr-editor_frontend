@@ -23,6 +23,8 @@ UPDATES
 
 20251008 "First commit"  
 20251008 New tag, v1.0.0 "database - frontend connection ok, routing ok, replicating es-views"  
+20251008 New tag, v1.0.1 "Added additional svelte-views"  
+
 
 ######
 LESSONS LEARNT

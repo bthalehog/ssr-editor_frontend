@@ -29,5 +29,6 @@
    * Use global.d.ts instead of compilerOptions.types
    * to avoid limiting type declarations.
    */
-  "include": ["../ssr-editor_frontend/src/**/*.d.ts", "../ssr-editor_frontend/src/**/*.js", "../ssr-editor_frontend/src/**/*.svelte"]
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"],
+  "extends": "./.svelte-kit/tsconfig.json"
 }
