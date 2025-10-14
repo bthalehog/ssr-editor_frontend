@@ -34,6 +34,7 @@ jobs:
           npm run build
           echo "" > build/.nojekyll
           echo "/*  /index.html   200" > build/_redirects
+          ls -la build/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
