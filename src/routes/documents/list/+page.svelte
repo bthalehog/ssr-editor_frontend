@@ -4,13 +4,15 @@
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
 
+    const API_BASE = "http://localhost:1337";
+
     let documents = [];
     let loading = true;
     let error = null;
 
     onMount(async () => {        
         try {
-            const response = await fetch('http://localhost:1337/api');
+            const response = await fetch(`${API_BASE}/api`);
             const data = await response.json();
             documents = data.docs;
         } catch (err) {
@@ -38,7 +40,7 @@
         <p class="error">Error: {error}</p>
     {:else}
         {#each documents as doc}
-            <h3><a href="/documents/{doc.id}">{doc.title}</a></h3>
+            <h3><a href="/documents/{doc._id}">{doc.title}</a></h3>
         {/each}
     {/if}
 </main>

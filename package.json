@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "dev:rollup": "rollup -c -w",
     "build:rollup": "rollup -c",
-    "startsirv": "sirv public --no-clear",
+    "startsirv": "sirv public --no-clear --host 0.0.0.0",
     "deploy": "npm run build && node ./scripts/gh-pages.js"
   },
   "devDependencies": {
