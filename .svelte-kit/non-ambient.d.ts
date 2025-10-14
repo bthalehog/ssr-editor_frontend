@@ -41,6 +41,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/" | "/documents" | "/documents/" | "/documents/create" | "/documents/create/" | "/documents/list" | "/documents/list/" | "/documents/update" | "/documents/update/" | `/documents/${string}` & {} | `/documents/${string}/` & {};
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/favicon.png" | string & {};
+		Asset(): "/_redirects" | "/favicon.png" | string & {};
 	}
 }
