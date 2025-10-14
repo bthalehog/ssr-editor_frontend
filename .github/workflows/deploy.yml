@@ -32,6 +32,7 @@ jobs:
         run: |
           npm install
           npm run build
+          echo "" > build/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
