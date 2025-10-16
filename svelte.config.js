@@ -10,7 +10,7 @@ export default {
       assets: 'build',
       fallback: 'index.html',
       precompress: false,
-      strict: true
+      strict: false
     }),
     paths: {
       base: '/ssr-editor_frontend',
