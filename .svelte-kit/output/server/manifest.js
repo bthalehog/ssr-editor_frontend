@@ -6,11 +6,11 @@ function __memo(fn) {
 
 return {
 	appDir: "_app",
-	appPath: "ssr-editor/_app",
+	appPath: "ssr-editor_frontend/_app",
 	assets: new Set(["_redirects","favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {start:"_app/immutable/entry/start.rHbLDqkA.js",app:"_app/immutable/entry/app.fruc02aq.js",imports:["_app/immutable/entry/start.rHbLDqkA.js","_app/immutable/chunks/DdzOCt1x.js","_app/immutable/chunks/C--EXBPb.js","_app/immutable/chunks/DZm4wIEF.js","_app/immutable/chunks/DJNdyps-.js","_app/immutable/chunks/DkvNNDwX.js","_app/immutable/chunks/Bdp2eOd4.js","_app/immutable/entry/app.fruc02aq.js","_app/immutable/chunks/DZm4wIEF.js","_app/immutable/chunks/C--EXBPb.js","_app/immutable/chunks/DJNdyps-.js","_app/immutable/chunks/DkvNNDwX.js","_app/immutable/chunks/DsnmJJEf.js","_app/immutable/chunks/vD9QUtaX.js","_app/immutable/chunks/DFrMXiLK.js","_app/immutable/chunks/Bdp2eOd4.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.CWOonTic.js",app:"_app/immutable/entry/app.CjDc9JW3.js",imports:["_app/immutable/entry/start.CWOonTic.js","_app/immutable/chunks/euIT3vUv.js","_app/immutable/chunks/Cx3WVP6-.js","_app/immutable/chunks/CBBjMJIg.js","_app/immutable/chunks/C7khA3dF.js","_app/immutable/chunks/sDculUIh.js","_app/immutable/chunks/DRzG5ckh.js","_app/immutable/entry/app.CjDc9JW3.js","_app/immutable/chunks/CBBjMJIg.js","_app/immutable/chunks/Cx3WVP6-.js","_app/immutable/chunks/C7khA3dF.js","_app/immutable/chunks/sDculUIh.js","_app/immutable/chunks/DsnmJJEf.js","_app/immutable/chunks/D-GSKBDf.js","_app/immutable/chunks/f9JMYk7F.js","_app/immutable/chunks/DRzG5ckh.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),

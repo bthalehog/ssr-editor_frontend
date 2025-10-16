@@ -1,5 +1,5 @@
 const BROWSER = false;
-let base = "/ssr-editor";
+let base = "/ssr-editor_frontend";
 let assets = base;
 const app_dir = "_app";
 const relative = false;

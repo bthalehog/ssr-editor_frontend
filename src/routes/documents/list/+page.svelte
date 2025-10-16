@@ -4,7 +4,7 @@
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
 
-    const API_BASE = "http://localhost:1337";
+    import { API_BASE } from '../../../lib/config.js';
 
     let documents = [];
     let loading = true;

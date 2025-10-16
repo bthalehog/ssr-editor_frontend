@@ -4,6 +4,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [sveltekit()],
+  base: '/ssr-editor_frontend/',
   server: {
     port: 5173,
     proxy: {
@@ -12,7 +13,6 @@ export default defineConfig({
         changeOrigin: true
       }
     },
-    base: '/ssr-editor/',
     build: {
       outDir: 'dist'
     }

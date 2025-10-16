@@ -26,6 +26,12 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const ATLAS_USERNAME: string;
+	export const ATLAS_PASSWORD: string;
+	export const ATLAS_CONNECTIONSTRING: string;
+	export const NODE_ENV: string;
+	export const PORT: string;
+	export const VITE_API_BASE: string;
 	export const LESSOPEN: string;
 	export const USER: string;
 	export const npm_config_user_agent: string;
@@ -80,7 +86,7 @@ declare module '$env/static/private' {
 	export const WSLENV: string;
 	export const INIT_CWD: string;
 	export const EDITOR: string;
-	export const NODE_ENV: string;
+	export const VITE_USER_NODE_ENV: string;
 }
 
 /**
@@ -110,6 +116,12 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		ATLAS_USERNAME: string;
+		ATLAS_PASSWORD: string;
+		ATLAS_CONNECTIONSTRING: string;
+		NODE_ENV: string;
+		PORT: string;
+		VITE_API_BASE: string;
 		LESSOPEN: string;
 		USER: string;
 		npm_config_user_agent: string;
@@ -164,7 +176,7 @@ declare module '$env/dynamic/private' {
 		WSLENV: string;
 		INIT_CWD: string;
 		EDITOR: string;
-		NODE_ENV: string;
+		VITE_USER_NODE_ENV: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}
