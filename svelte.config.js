@@ -13,7 +13,7 @@ export default {
       strict: true
     }),
     paths: {
-      base: '/ssr-editor_frontend',
+      base: '/ssr-editor',
       relative: false
     }
   }

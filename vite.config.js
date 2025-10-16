@@ -11,6 +11,10 @@ export default defineConfig({
         target: 'http://localhost:1337',
         changeOrigin: true
       }
+    },
+    base: '/ssr-editor/',
+    build: {
+      outDir: 'dist'
     }
   }
 })

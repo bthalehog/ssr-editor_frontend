@@ -7,17 +7,22 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "dev:rollup": "rollup -c -w",
-    "build:rollup": "rollup -c",
     "startsirv": "sirv public --no-clear --host 0.0.0.0",
-    "deploy": "npm run build && node ./scripts/gh-pages.js"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
     "svelte": "^5.39.6",
-    "vite": "^7.1.7"
+    "vite": "^7.1.7",
+    "gh-pages": "^6.0.0"
   },
   "dependencies": {
-    "@sveltejs/adapter-static": "^3.0.10"
+    "express": "^4.21.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "morgan": "^1.10.1",
+    "mongodb": "^6.20.0",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "svelte": "^5.39.6"
   }
 }
