@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "ssr-editor_frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,16 +7,17 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "startsirv": "sirv public --no-clear --host 0.0.0.0",
     "deploy": "npm run build && gh-pages -d build"
   },
   "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.47.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "typescript": "^5.4.0",
     "svelte": "^5.39.6",
     "vite": "^7.1.7",
     "gh-pages": "^6.0.0"
   },
-  "dependencies": {
-    "@sveltejs/adapter-static": "^3.0.10"
-  }
+  "dependencies": {}
 }

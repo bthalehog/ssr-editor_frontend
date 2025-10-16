@@ -12,7 +12,7 @@
 
     onMount(async () => {        
         try {
-            const response = await fetch(`${API_BASE}/api`);
+            const response = await fetch(`${API_BASE}/api/documents/list`);
             const data = await response.json();
             documents = data.docs;
         } catch (err) {
