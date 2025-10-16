@@ -17,12 +17,6 @@
     "gh-pages": "^6.0.0"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.6.1",
-    "morgan": "^1.10.1",
-    "mongodb": "^6.20.0",
-    "@sveltejs/adapter-static": "^3.0.10",
-    "svelte": "^5.39.6"
+    "@sveltejs/adapter-static": "^3.0.10"
   }
 }
