@@ -32,6 +32,7 @@ UPDATES
 20251014 New tag, v1.0.5 "frontend deploymed, update configs for vite, routing not working"  
 20251016 New tag, v1.0.6 "Deployed but routing with svelteKit not working"   
 20251017 New tag, v1.0.7 "Debugging routing on deployment"  
+20251017 New tag, v1.0.8 "Routes working, handling mime-error on spec doc view"      
 
 
 ######
