@@ -6,7 +6,8 @@
     "isEntry": true,
     "imports": [
       "_internal.js",
-      "_environment.js"
+      "_environment.js",
+      "_server.js"
     ]
   },
   "_Footer.CmYLLcsZ.css": {
@@ -16,6 +17,13 @@
   "_Footer.js": {
     "file": "chunks/Footer.js",
     "name": "Footer",
+    "imports": [
+      "_index2.js",
+      "_exports.js",
+      "_utils.js",
+      "_server.js",
+      "_state.svelte.js"
+    ],
     "css": [
       "_app/immutable/assets/Footer.CmYLLcsZ.css"
     ]
@@ -63,8 +71,13 @@
       "_environment.js",
       "_utils2.js",
       "_equality.js",
-      "_context.js"
+      "_context.js",
+      "_server.js"
     ]
+  },
+  "_server.js": {
+    "file": "chunks/server.js",
+    "name": "server"
   },
   "_shared.js": {
     "file": "chunks/shared.js",
@@ -96,7 +109,8 @@
     "imports": [
       "_shared.js",
       "_utils2.js",
-      "_environment.js"
+      "_environment.js",
+      "_server.js"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
@@ -125,6 +139,7 @@
     "isEntry": true,
     "imports": [
       "_environment.js",
+      "_server.js",
       "_exports.js",
       "_utils.js",
       "_index.js",

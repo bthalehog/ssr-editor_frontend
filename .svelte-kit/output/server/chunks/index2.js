@@ -774,6 +774,9 @@ function attributes(attrs, css_hash, classes, styles, flags = 0) {
   }
   return attr_str;
 }
+function stringify(value) {
+  return typeof value === "string" ? value : value == null ? "" : value + "";
+}
 export {
   ASYNC as A,
   BOUNDARY_EFFECT as B,
@@ -811,5 +814,6 @@ export {
   render as v,
   experimental_async_ssr as w,
   head as x,
-  attr as y
+  attr as y,
+  stringify as z
 };

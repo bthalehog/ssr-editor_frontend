@@ -3,8 +3,8 @@
     import '../../../assets/app.css';
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
-
     import { API_BASE } from '../../../lib/config.js';
+    import { base } from '$app/paths';
 
     let documents = [];
     let loading = true;
@@ -40,7 +40,7 @@
         <p class="error">Error: {error}</p>
     {:else}
         {#each documents as doc}
-            <h3><a href="/documents/{doc._id}">{doc.title}</a></h3>
+            <h3><a href="{base}/documents/{doc._id}">{doc.title}</a></h3>
         {/each}
     {/if}
 </main>
