@@ -1,1 +1,16 @@
-/*    /index.html   200
+# Static assets
+/_app/immutable/assets/*    /_app/immutable/assets/*    200
+/_app/immutable/chunks/*    /_app/immutable/chunks/*    200
+/_app/immutable/entry/*     /_app/immutable/entry/*     200
+/_app/immutable/nodes/*     /_app/immutable/nodes/*     200
+/_app/immutable/*.css       /_app/immutable/*.css       200
+/_app/immutable/*.js        /_app/immutable/*.js        200
+/_app/immutable/*.png       /_app/immutable/*.png       200
+/_app/immutable/*.jpg       /_app/immutable/*.jpg       200
+/_app/immutable/*.svg       /_app/immutable/*.svg       200
+
+# Root assets
+/favicon.png                /favicon.png                200
+
+# SPA
+/*                          /index.html

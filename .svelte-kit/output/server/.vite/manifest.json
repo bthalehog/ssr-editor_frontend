@@ -138,6 +138,12 @@
       "_Footer.js"
     ]
   },
+  "src/routes/api/documents/+server.js": {
+    "file": "entries/endpoints/api/documents/_server.js",
+    "name": "entries/endpoints/api/documents/_server",
+    "src": "src/routes/api/documents/+server.js",
+    "isEntry": true
+  },
   "src/routes/documents/+page.svelte": {
     "file": "entries/pages/documents/_page.svelte.js",
     "name": "entries/pages/documents/_page.svelte",

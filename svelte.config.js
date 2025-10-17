@@ -11,6 +11,9 @@ export default {
       fallback: 'index.html',
       precompress: false,
       strict: false
-    })
+    }),
+    paths: {
+      base: '/ssr-editor_frontend'
+    }
   }
 }

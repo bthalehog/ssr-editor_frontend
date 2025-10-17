@@ -2,7 +2,7 @@ const BROWSER = false;
 let base = "/ssr-editor_frontend";
 let assets = base;
 const app_dir = "_app";
-const relative = false;
+const relative = true;
 const initial = { base, assets };
 function override(paths) {
   base = paths.base;

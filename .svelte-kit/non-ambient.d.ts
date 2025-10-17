@@ -27,18 +27,20 @@ export {};
 
 declare module "$app/types" {
 	export interface AppTypes {
-		RouteId(): "/" | "/documents" | "/documents/create" | "/documents/list" | "/documents/[id]";
+		RouteId(): "/" | "/api" | "/api/documents" | "/documents" | "/documents/create" | "/documents/list" | "/documents/[id]";
 		RouteParams(): {
 			"/documents/[id]": { id: string }
 		};
 		LayoutParams(): {
 			"/": { id?: string };
+			"/api": Record<string, never>;
+			"/api/documents": Record<string, never>;
 			"/documents": { id?: string };
 			"/documents/create": Record<string, never>;
 			"/documents/list": Record<string, never>;
 			"/documents/[id]": { id: string }
 		};
-		Pathname(): "/" | "/documents" | "/documents/" | "/documents/create" | "/documents/create/" | "/documents/list" | "/documents/list/" | `/documents/${string}` & {} | `/documents/${string}/` & {};
+		Pathname(): "/" | "/api" | "/api/" | "/api/documents" | "/api/documents/" | "/documents" | "/documents/" | "/documents/create" | "/documents/create/" | "/documents/list" | "/documents/list/" | `/documents/${string}` & {} | `/documents/${string}/` & {};
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
 		Asset(): "/_redirects" | "/favicon.png" | string & {};
 	}
