@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <script>
-        sessionStorage.redirect = location.href;
-        location.replace('/ssr-editor_frontend/');
-    </script>
-</head>
-<body>
-    <p>Redirect...</p>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf8" />
+        <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SSR-Editor</title>
+        %sveltekit.head%
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <div style="display: contents">%sveltekit.body%</div>
+    </body>
 </html>
