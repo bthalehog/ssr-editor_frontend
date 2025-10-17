@@ -6,6 +6,7 @@ import "../../../../chunks/utils.js";
 import "clsx";
 import "@sveltejs/kit/internal/server";
 import "../../../../chunks/state.svelte.js";
+import "../../../../chunks/config.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     head($$renderer2, ($$renderer3) => {

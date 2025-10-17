@@ -1,5 +1,6 @@
 import { x as head } from "../../../../chunks/index2.js";
 import { H as Header, F as Footer } from "../../../../chunks/Footer.js";
+import "../../../../chunks/config.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     head($$renderer2, ($$renderer3) => {

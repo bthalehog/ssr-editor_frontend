@@ -1,5 +1,6 @@
 import { x as head, y as attr } from "../../../../chunks/index2.js";
 import { H as Header, F as Footer } from "../../../../chunks/Footer.js";
+import "../../../../chunks/config.js";
 import { e as escape_html } from "../../../../chunks/context.js";
 function _page($$renderer) {
   let title = "";

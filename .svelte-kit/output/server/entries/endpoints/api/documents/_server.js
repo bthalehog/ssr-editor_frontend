@@ -1,6 +1,5 @@
 import { json } from "@sveltejs/kit";
-const isDevelopment = typeof window !== "undefined" && window.location.hostname === "localhost";
-const API_BASE = isDevelopment ? "http://localhost:1337" : "jsramverk-editor-alhf24.azurewebsites.net";
+import { A as API_BASE } from "../../../../chunks/config.js";
 async function GET() {
   try {
     const response = await fetch(`${API_BASE}/api`);
