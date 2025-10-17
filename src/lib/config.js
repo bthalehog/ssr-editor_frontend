@@ -2,7 +2,7 @@ const isDevelopment = typeof window !== 'undefined' && (window.location.hostname
 
 export const API_BASE = isDevelopment
     ? 'http://localhost:1337'
-    : 'http://jsramverk-editor-alhf24.azurewebsites.net';
+    : 'https://jsramverk-editor-alhf24.azurewebsites.net';
 
 if (typeof window !== 'undefined') {
     console.log('Env found:', {
