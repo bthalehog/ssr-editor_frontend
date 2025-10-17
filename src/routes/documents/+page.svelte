@@ -4,7 +4,7 @@
     import Header from '../../components/Header.svelte';
     import Footer from '../../components/Footer.svelte';
     import { API_BASE } from '../../lib/config.js';
-    import { base } from  "$app/paths";
+    import { base } from '$app/paths';
 
     let documents = [];
     let loading = true;
@@ -12,7 +12,7 @@
 
     onMount(async () => {        
         try {
-            const response = await fetch(`${API_BASE}/api/documents/list`);
+            const response = await fetch(`${API_BASE}/api/documents`);
             const data = await response.json();
             documents = data.docs;
         } catch (err) {
