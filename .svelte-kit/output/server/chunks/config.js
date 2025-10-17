@@ -1,5 +1,5 @@
 const isDevelopment = typeof window !== "undefined" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
-const API_BASE = isDevelopment ? "http://localhost:1337" : "jsramverk-editor-alhf24.azurewebsites.net";
+const API_BASE = isDevelopment ? "http://localhost:1337" : "http://jsramverk-editor-alhf24.azurewebsites.net";
 if (typeof window !== "undefined") {
   console.log("Env found:", {
     hostname: window.location.hostname,

@@ -10,5 +10,6 @@ export async function GET() {
         return json(data);
     } catch (error) {
         console.error("Error in svelte router/server.js", error);
+        return json({ error: "Could not fetch doc/server debug in server.js"})
     }
 };

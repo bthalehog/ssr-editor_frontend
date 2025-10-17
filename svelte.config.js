@@ -13,7 +13,7 @@ export default {
       strict: false
     }),
     paths: {
-      base: '/ssr-editor_frontend'
+      base: process.env.NODE_ENV === 'production' ? '/ssr-editor_frontend' : ''
     }
   }
 }
