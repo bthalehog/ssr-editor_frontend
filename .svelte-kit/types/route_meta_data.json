@@ -1,0 +1,10 @@
+{
+	"/": [],
+	"/api/documents": [
+		"src/routes/api/documents/+server.js"
+	],
+	"/documents": [],
+	"/documents/create": [],
+	"/documents/list": [],
+	"/documents/[id]": []
+}
