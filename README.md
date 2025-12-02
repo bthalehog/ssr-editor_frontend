@@ -3,24 +3,15 @@
 # SSR Editor frontend - JSRAMVERK (BTH 2025)
 _Author: A Hoegfeldt_  
 
-######
-A REPO IS BORN
-######
-
+## A REPO IS BORN
 This repository was born as part if the deployment of the ssr-editor express app backend.
 
-######
-ABOUT
-######
+## ABOUT
+- This is the frontend for the express/mongodb backend found in https://github.com/bthalehog/ssr-editor.  
+- The frontend is deployed with github-pages at https://bthalehog.github.io/ssr-editor_frontend/.  
+- The webapp for the backend is deployed with Azure.  
 
-This is the frontend for a express/mongodb backend found in https://github.com/bthalehog/ssr-editor
-
-Developed with Svelte in Vite.
-
-######
-UPDATES
-######
-
+## UPDATES
 20251008 "First commit"  git 
 20251008 New tag, v1.0.0 "database - frontend connection ok, routing ok, replicating es-views"  
 20251008 New tag, v1.0.1 "Added additional svelte-views"  
@@ -33,11 +24,7 @@ UPDATES
 20251016 New tag, v1.0.6 "Deployed but routing with svelteKit not working"   
 20251017 New tag, v1.0.7 "Debugging routing on deployment"  
 20251017 New tag, v1.0.8 "Routes working, handling mime-error on spec doc view"      
+20251017 New tag, v1.0.9 "Updated README to comply with assignment completion"  
 
-
-######
-LESSONS LEARNT
-######
-
-To read about the progress made in each part of the course please refer to the https://github.com/bthalehog/ssr-editor/alhf24.md.
-
+## LESSONS LEARNT
+To read about the progress made in each part of the course please refer to the [report](https://github.com/bthalehog/ssr-editor/alhf24.md).
