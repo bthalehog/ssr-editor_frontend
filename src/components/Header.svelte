@@ -9,5 +9,6 @@
         <a href="{base}/documents" >Start</a>
         <a href="{base}/documents/list" >Lista</a>
         <a href="{base}/documents/create">Nytt dokument</a>
+        <a href="{base}/login">Logga in</a>
     </navigation>
 </header>

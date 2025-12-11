@@ -5,11 +5,12 @@
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
     import { API_BASE } from '../../../lib/config.js';
+    import { isAuth, getToken } from '$lib/stores/auth';
 
-    // let documents = [];
     let loading = true;
     let error = null;
     let success = false;
+    let $isAuth;
 
     let doc = {
         _id: '',
@@ -20,9 +21,13 @@
     let title = '';
     let content = '';
     let isSubmitting = false;
+    let isEditing = false;
+
+    isAuth.subscribe(value= => $isAuth = value);
 
     onMount(async () => {
         try {
+            // No auth for reading!
             const response = await fetch(`${API_BASE}/api/documents/${$page.params.id}`);
             const data = await response.json();
             
@@ -36,16 +41,38 @@
         }
     });
 
+    function startEdit() {
+        if (!$isAuth) {
+            window.location.href = '/login';
+            return;
+        }
+        isEditing = true;
+    }
+
+    function cancelEdit() {
+        isEditing = false;
+        title = doc.title;
+        content = doc.content;
+    }
+
     async function handleSubmit() {
+        if (!$isAuth) {
+            console.error("Du måste vara inloggad för att redigera"):
+            return;
+        }
+
         isSubmitting = true;
         error = null;
         success = false;
 
         try {
+            // Get token here
+            const token = getToken();
             const response = await fetch(`${API_BASE}/api/documents/update/${$page.params.id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'x-access-token': token
                 },
                 body: JSON.stringify({
                     title,
@@ -53,11 +80,14 @@
                 })
             });
 
+            const data = await response.json();
+
             if (response.ok) {
                 success = true;
                 doc.title = title;
                 doc.content = content;
                 console.log('Document updated');
+                isEditing = false;
             } else {
                 console.error('Update failed');
             }
@@ -79,42 +109,73 @@
 
 <main>
     <h2>Redigera</h2>
-
-    {#if success}
-        <p class="success">Dokument uppdaterat</p>
-    {/if}
-
     {#if loading}
-        <p>Hämtar dokument...</p>
-    {:else if error}
+        <p>Hämtar dokument</p>
+    {:else if error && !doc._id}
         <p class="error">Error: {error}</p>
     {:else}
-        <form on:submit|preventDefault={handleSubmit} class="new-doc">
-            <label for="title">Titel:</label>
+        <div class="document-view">
+            {#if !isEditing}
+                <div class="document-header">
+                    <h2>{doc.title}</h2>
+                    {#if $isAuth}
+                        <button on:click={startEditing} class="edit-btn">Redigera</button>
+                    {:else}
+                        <p class="alert">Logga in för att kunna redigera</p>
+                    {/if}
+                </div>
+                <div class="document-content">
+                    <pre>{doc.content || '(Empty)'}</pre>
+                </div>
+            {:else}
+                <h2>Redigera dokument</h2>
 
-            <input
-                type="text"
-                id="title"
-                bind:value={title}
-                required
-                disabled={isSubmitting}
-            />
+                {#if success}
+                    <p class="success">Dokument uppdaterat</p>
+                {/if}
 
-            <label for="content">Innehåll:</label>
-            <textarea
-                id="content"
-                bind:value={content}
-                disabled={isSubmitting}
-            ></textarea>
+                {#if error}
+                    <p class="error">Error: {error}</p>
+                {/if}
+       
+                <form on:submit|preventDefault={handleSubmit} class="new-doc">
+                    <label for="title">Titel:</label>
 
-            <button
-                type="submit"
-                class="submit-btn"
-                disabled={isSubmitting}
-            >
-                {isSubmitting ? 'Uppdaterar...' : 'Uppdatera'}
-            </button>
-        </form>
+                    <input
+                        type="text"
+                        id="title"
+                        bind:value={title}
+                        required
+                        disabled={isSubmitting}
+                    />
+
+                    <label for="content">Innehåll:</label>
+                    <textarea
+                        id="content"
+                        bind:value={content}
+                        disabled={isSubmitting}
+                    ></textarea>
+
+                    <div class="form-actions">
+                        <button
+                            type="button"
+                            on:click={cancelEdit}
+                            class="cancel-btn"
+                            disabled={isSubmitting}
+                        >
+                            Avbryt
+                        </button>
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting ? 'Uppdaterar...' : 'Uppdatera'}
+                        </button>
+                    </div>
+                </form>
+            {/if}
+        </div>
     {/if}
 </main>
 
