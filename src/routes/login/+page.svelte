@@ -1,20 +1,20 @@
 <script>
     import { onMount } from 'svelte';
-    import Header from '../components/Header.svelte';
-    import Footer from '../components/Footer.svelte';
-    import { API_BASE } from '../lib/config';
-    import { login, isAuth } from '$lib/stores/auth';
+    import Header from '../../components/Header.svelte';
+    import Footer from '../../components/Footer.svelte';
+    import { API_BASE } from '../../lib/config';
+    import { login, isAuthenticated } from '$lib/stores/auth.js';
 
-    import '../assets/app.css';
+    import '../../assets/app.css';
 
     let email = '';
     let password = '';
     let loading = false;
     let error = null;
-    let $isAuth;
+    let isAuth = false;
 
-    isAuth.subscribe(value => {
-        $isAuth = value;
+    isAuthenticated.subscribe(value => {
+        isAuth = value;
     })
 
     async function handleLogin(event) {
@@ -25,7 +25,7 @@
             const response = await fetch(`${API_BASE}/api/auth/login`, {
                 method: 'POST',
                 headers: {
-                    'Content-type': 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ email, password })
             });
@@ -33,14 +33,21 @@
             const data = await response.json();
 
             if (response.ok && data.token) {
-                login(data.token, { email: data.email, userId: data.userId });
+                error = null;
+
+                login(data.token, {
+                    email: data.email,
+                    userId: data.userId
+                });
                 
                 window.location.href = '/documents';
             } else {
+                error = 'Inloggningen misslyckades, försök igen';
                 console.log('Inloggningen misslyckades, försök igen')
             }
-        } catch (error) {
-            console.error('Login error:', error);
+        } catch (err) {
+            console.error('Login error:', err);
+            error = 'Inloggningen misslyckades, försök igen';
         } finally {
             loading = false;
         }

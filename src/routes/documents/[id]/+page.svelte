@@ -23,7 +23,7 @@
     let isSubmitting = false;
     let isEditing = false;
 
-    isAuth.subscribe(value= => $isAuth = value);
+    isAuth.subscribe(value => $isAuth = value);
 
     onMount(async () => {
         try {
@@ -57,7 +57,7 @@
 
     async function handleSubmit() {
         if (!$isAuth) {
-            console.error("Du måste vara inloggad för att redigera"):
+            console.error("Du måste vara inloggad för att redigera");
             return;
         }
 
@@ -119,7 +119,7 @@
                 <div class="document-header">
                     <h2>{doc.title}</h2>
                     {#if $isAuth}
-                        <button on:click={startEditing} class="edit-btn">Redigera</button>
+                        <button on:click={startEdit} class="edit-btn">Redigera</button>
                     {:else}
                         <p class="alert">Logga in för att kunna redigera</p>
                     {/if}

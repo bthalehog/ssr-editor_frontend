@@ -23,8 +23,8 @@ function getUserFromStorage() {
 }
 
 // POSITIONING!
-const isAuth = writable(!!getTokenFromStorage());
-const user = writable(getUserFromStorage());
+export const isAuthenticated = writable(!!getTokenFromStorage());
+export const user = writable(getUserFromStorage());
 
 export function login(authToken, userData) {
     if (!browser) return null;
@@ -33,7 +33,7 @@ export function login(authToken, userData) {
     sessionStorage.setItem(USER_KEY, JSON.stringify(userData));
 
     user.set(userData);
-    isAuth.set(true);
+    isAuthenticated.set(true);
 }
 
 export function logoff() {
@@ -43,7 +43,7 @@ export function logoff() {
     sessionStorage.removeItem(USER_KEY);
 
     user.set(null);
-    isAuth.set(false);
+    isAuthenticated.set(false);
 }
 
 export function getToken() {
@@ -51,5 +51,3 @@ export function getToken() {
 
     return sessionStorage.getItem(STORAGE_KEY);
 }
-
-export { isAuth, user };
