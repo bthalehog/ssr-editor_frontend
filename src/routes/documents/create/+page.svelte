@@ -4,25 +4,26 @@
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
     import { API_BASE } from '../../../lib/config.js';
-    import { isAuth, getToken } from '../../../lib/stores/auth.js';
+    import { isAuthenticated, getToken } from '$lib/stores/auth.js';
 
     let title = '';
     let content = '';
     let submits = false;
     let success = false;
+    
     // Added auth
     let error = null;
-    let $isAuth;
+    let isAuth = null;
 
-    isAuth.subscribe(value => {
-        $isAuth = value;
+    isAuthenticated.subscribe(value => {
+        isAuth = value;
     });
 
     async function formSubmit(event) {
         event.preventDefault();
 
         // For auth, added x-access to headers
-        if (!$isAuth) {
+        if (!isAuth) {
             error = 'Du måste vara inloggad för att skapa eller redigera dokument';
             return;
         }

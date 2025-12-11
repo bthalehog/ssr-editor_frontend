@@ -93,7 +93,7 @@
     </p>
 
     <p class="auth-link">
-        Du kan läsa <a href="/documents">dokumenten i databasen</a> som gäst <a href="/register">Registrera dig!</a>
+        Du kan läsa <a href="/documents">dokumenten i databasen</a> som gäst.
     </p>
     
 </main>
