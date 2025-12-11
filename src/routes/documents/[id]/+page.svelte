@@ -5,12 +5,16 @@
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
     import { API_BASE } from '../../../lib/config.js';
-    import { isAuth, getToken } from '$lib/stores/auth';
+    import { isAuthenticated, getToken } from '$lib/stores/auth.js';
 
     let loading = true;
     let error = null;
     let success = false;
-    let $isAuth;
+    let isAuth = null;
+
+    isAuthenticated.subscribe(value => {
+        isAuth = value;
+    });
 
     let doc = {
         _id: '',
@@ -22,8 +26,6 @@
     let content = '';
     let isSubmitting = false;
     let isEditing = false;
-
-    isAuth.subscribe(value => $isAuth = value);
 
     onMount(async () => {
         try {
@@ -42,7 +44,7 @@
     });
 
     function startEdit() {
-        if (!$isAuth) {
+        if (!$isAuthenticated) {
             window.location.href = '/login';
             return;
         }
@@ -56,7 +58,7 @@
     }
 
     async function handleSubmit() {
-        if (!$isAuth) {
+        if (!$isAuthenticated) {
             console.error("Du måste vara inloggad för att redigera");
             return;
         }
@@ -90,6 +92,7 @@
                 isEditing = false;
             } else {
                 console.error('Update failed');
+                error = data.error || 'Update failed';
             }
         } catch (error) {
             console.error('Error updating document from view /:id', error);
@@ -118,14 +121,14 @@
             {#if !isEditing}
                 <div class="document-header">
                     <h2>{doc.title}</h2>
-                    {#if $isAuth}
+                    {#if $isAuthenticated}
                         <button on:click={startEdit} class="edit-btn">Redigera</button>
                     {:else}
                         <p class="alert">Logga in för att kunna redigera</p>
                     {/if}
                 </div>
                 <div class="document-content">
-                    <pre>{doc.content || '(Empty)'}</pre>
+                    <pre>{doc.content || 'Loading...'}</pre>
                 </div>
             {:else}
                 <h2>Redigera dokument</h2>
