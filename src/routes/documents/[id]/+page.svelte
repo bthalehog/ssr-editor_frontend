@@ -1,16 +1,18 @@
 <script>
-    import { onMount } from 'svelte';
+    import { onDestroy, onMount } from 'svelte';
     import '../../../assets/app.css';
     import { page } from '$app/stores';
     import Header from '../../../components/Header.svelte';
     import Footer from '../../../components/Footer.svelte';
     import { API_BASE } from '../../../lib/config.js';
     import { isAuthenticated, getToken } from '$lib/stores/auth.js';
+    import { io } from 'socket.io-client';    
 
     let loading = true;
     let error = null;
     let success = false;
     let isAuth = null;
+    let socket = null;
 
     isAuthenticated.subscribe(value => {
         isAuth = value;
@@ -26,6 +28,7 @@
     let content = '';
     let isSubmitting = false;
     let isEditing = false;
+    let isUpdating = false;
 
     onMount(async () => {
         try {
@@ -36,10 +39,32 @@
             doc = data.docs;
             title = doc.title;
             content = doc.content;
+
+            // Connect to backend socket
+            socket = io(API_BASE);
+            
+            // Join doc room
+            socket.emit('create', doc._id);
+
+            // Get updates
+            socket.on('doc', (data) => {
+                isUpdating = true;
+
+                if (data.html !== undefined) content = data.html;
+                if (data.title !== undefined) title = data.title;
+
+                isUpdating = false;
+            });
         } catch (err) {
             error = err.message;
         } finally {
             loading = false;
+        }
+    });
+
+    onDestroy(() => {
+        if (socket) {
+            socket.disconnect();
         }
     });
 
@@ -150,6 +175,14 @@
                         bind:value={title}
                         required
                         disabled={isSubmitting}
+                        on:input={(e) => {
+                            if (socket && !isUpdating) {
+                                socket.emit('doc', {
+                                    _id: doc._id,
+                                    title: e.target.value
+                                });
+                            }
+                        }}
                     />
 
                     <label for="content">Innehåll:</label>
@@ -157,6 +190,14 @@
                         id="content"
                         bind:value={content}
                         disabled={isSubmitting}
+                        on:input={(e) => {
+                            if (socket && !isUpdating) {
+                                socket.emit('doc', {
+                                    _id: doc._id,
+                                    html: e.target.value
+                                });
+                            }
+                        }}
                     ></textarea>
 
                     <div class="form-actions">
