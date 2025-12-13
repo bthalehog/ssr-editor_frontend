@@ -25,7 +25,11 @@ This repository was born as part if the deployment of the ssr-editor express app
 20251017 New tag, v1.0.7 "Debugging routing on deployment"  
 20251017 New tag, v1.0.8 "Routes working, handling mime-error on spec doc view"      
 20251017 New tag, v1.0.9 "Updated README to comply with assignment completion"
-20251211 New tag, v2.0.1 "Initiated dev, auth added"   
+20251211 New tag, v2.0.1 "Initiated dev, auth added"    
+20251211 New tag, v2.0.2 "Fixing auth"  
+20251211 New tag, v2.0.3 "Fixing auth"  
+20251211 New tag, v2.0.4 "Fixing auth"  
+20251212 New tag, v2.0.5 "Pushing sockets edit frontend"  
 
 ## LESSONS LEARNT
 To read about the progress made in each part of the course please refer to the [report](https://github.com/bthalehog/ssr-editor/alhf24.md).
