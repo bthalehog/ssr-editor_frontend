@@ -4,6 +4,7 @@
     import Footer from '../../components/Footer.svelte';
     import { API_BASE } from '../../lib/config';
     import { login, isAuthenticated } from '$lib/stores/auth.js';
+    import { base } from '$app/paths';
     export const prerender = true;
 
     import '../../assets/app.css';
@@ -94,7 +95,7 @@
     </p>
 
     <p class="auth-link">
-        Du kan läsa <a href="/documents">dokumenten i databasen</a> som gäst.
+        Du kan läsa <a href="{base}/documents">dokumenten i databasen</a> som gäst.
     </p>
     
 </main>
