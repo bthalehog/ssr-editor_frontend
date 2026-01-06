@@ -7,8 +7,6 @@
     import { base } from '$app/paths';
     import { page } from '$app/stores';
 
-    export const prerender = true; // Make static
-
     let email = '';
     let password = '';
     let confirmPassword = '';

@@ -223,6 +223,7 @@
       "_Footer.js",
       "_config.js",
       "_auth.js",
+      "_server.js",
       "_context.js"
     ]
   },

@@ -32,6 +32,8 @@
 
             const data = await response.json();
 
+            console.log(data)
+            
             if (response.ok && data.token) {
                 error = null;
 
@@ -42,18 +44,16 @@
                 
                 window.location.href = `${base}/documents`;
             } else {
-                error = 'Inloggningen misslyckades, försök igen';
-                console.log('Inloggningen misslyckades, försök igen')
+                error = data.error || 'Inloggningen misslyckades, försök igen'
+                console.error('Inloggningen misslyckades, försök igen', data)
             }
         } catch (err) {
             console.error('Login error:', err);
-            error = 'Inloggningen misslyckades, försök igen';
+            error = err.message || 'Inloggningen misslyckades, försök igen';
         } finally {
             loading = false;
         }
     }
-
-    export const prerender = true;
 </script>
 
 <svelte:head>
@@ -71,6 +71,7 @@
     {#if error}
         <div class="error">
             <p>Fel under inloggning, försök igen</p>
+            <p>{error}</p>
         </div>
     {/if}
 
