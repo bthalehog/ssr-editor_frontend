@@ -3,7 +3,9 @@
     import Header from "../../components/Header.svelte";
     import Footer from "../../components/Footer.svelte";
     import '../../assets/app.css';
-    export const prerender = true; // Has to be static
+    import { base } from "$app/paths";
+
+    export const prerender = true; // Make static
 
     let email = '';
     let password = '';
@@ -44,7 +46,7 @@
                 success = true;
 
                 setTimeout(() => {
-                    window.location.href = '/login';
+                    window.location.href = "/login";
                 }, 2000);
             } else {
                 error = 'Registreringen misslyckades'
@@ -99,7 +101,7 @@
         </button>
     </form>
 
-    <p class="auth-link">Har du redan ett konto? <a href="/login">logga in</a></p>
+    <p class="auth-link">Har du redan ett konto? <a href="{base}/login">logga in</a></p>
 </main>
 
 <Footer />
