@@ -1,9 +1,12 @@
 <script>
+    import { onMount } from 'svelte';
     import { API_BASE } from "$lib/config";
     import Header from "../../components/Header.svelte";
     import Footer from "../../components/Footer.svelte";
     import '../../assets/app.css';
     import { base } from '$app/paths';
+    import { page } from '$app/stores';
+
     export const prerender = true; // Make static
 
     let email = '';

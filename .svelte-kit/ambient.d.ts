@@ -31,7 +31,6 @@ declare module '$env/static/private' {
 	export const ATLAS_CONNECTIONSTRING: string;
 	export const PORT: string;
 	export const VITE_API_BASE: string;
-	export const SVELTE_BASE: string;
 	export const LESSOPEN: string;
 	export const USER: string;
 	export const npm_config_user_agent: string;
@@ -121,7 +120,6 @@ declare module '$env/dynamic/private' {
 		ATLAS_CONNECTIONSTRING: string;
 		PORT: string;
 		VITE_API_BASE: string;
-		SVELTE_BASE: string;
 		LESSOPEN: string;
 		USER: string;
 		npm_config_user_agent: string;

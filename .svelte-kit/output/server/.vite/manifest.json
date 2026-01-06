@@ -223,7 +223,6 @@
       "_Footer.js",
       "_config.js",
       "_auth.js",
-      "_server.js",
       "_context.js"
     ]
   },
@@ -237,6 +236,9 @@
       "_config.js",
       "_Footer.js",
       "_server.js",
+      "_exports.js",
+      "_utils.js",
+      "_state.svelte.js",
       "_context.js"
     ]
   }
