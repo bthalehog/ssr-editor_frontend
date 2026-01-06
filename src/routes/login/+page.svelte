@@ -91,11 +91,11 @@
     </form>
 
     <p class="auth-link">
-        Har du inget konto? <a href="register">Registrera dig</a>!
+        Har du inget konto? <a href="https://bthalehog.github.io/ssr-editor_frontend/register">Registrera dig</a>!
     </p>
 
     <p class="auth-link">
-        Du kan läsa <a href="documents">dokumenten i databasen</a> som gäst.
+        Du kan läsa <a href="https://bthalehog.github.io/ssr-editor_frontend/register/documents">dokumenten i databasen</a> som gäst.
     </p>
     
 </main>
