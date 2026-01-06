@@ -7,7 +7,9 @@ export const nodes = [
 	() => import('./nodes/3'),
 	() => import('./nodes/4'),
 	() => import('./nodes/5'),
-	() => import('./nodes/6')
+	() => import('./nodes/6'),
+	() => import('./nodes/7'),
+	() => import('./nodes/8')
 ];
 
 export const server_loads = [];
@@ -17,7 +19,9 @@ export const dictionary = {
 		"/documents": [3],
 		"/documents/create": [5],
 		"/documents/list": [6],
-		"/documents/[id]": [4]
+		"/documents/[id]": [4],
+		"/login": [7],
+		"/register": [8]
 	};
 
 export const hooks = {
@@ -28,6 +32,7 @@ export const hooks = {
 };
 
 export const decoders = Object.fromEntries(Object.entries(hooks.transport).map(([k, v]) => [k, v.decode]));
+export const encoders = Object.fromEntries(Object.entries(hooks.transport).map(([k, v]) => [k, v.encode]));
 
 export const hash = false;
 

@@ -1,4 +1,4 @@
-import { x as head } from "../../chunks/index2.js";
+import { V as head } from "../../chunks/index2.js";
 import { H as Header, F as Footer } from "../../chunks/Footer.js";
 import "../../chunks/config.js";
 import "@sveltejs/kit/internal/server";
