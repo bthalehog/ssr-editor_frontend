@@ -3,6 +3,7 @@
     import Header from "../../components/Header.svelte";
     import Footer from "../../components/Footer.svelte";
     import '../../assets/app.css';
+    export const prerender = true; // Has to be static
 
     let email = '';
     let password = '';

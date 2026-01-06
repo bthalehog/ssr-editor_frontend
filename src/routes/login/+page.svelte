@@ -4,8 +4,7 @@
     import Footer from '../../components/Footer.svelte';
     import { API_BASE } from '../../lib/config';
     import { login, isAuthenticated } from '$lib/stores/auth.js';
-    import { base } from '$app/paths';
-    import { goto } from '$app/navigation';
+    export const prerender = true;
 
     import '../../assets/app.css';
 
@@ -42,8 +41,7 @@
                     userId: data.userId
                 });
                 
-                // window.location.href = '/documents';
-                goto(`${base}/documents`)
+                window.location.href = '/documents';
             } else {
                 error = 'Inloggningen misslyckades, försök igen';
                 console.log('Inloggningen misslyckades, försök igen')
@@ -92,11 +90,11 @@
     </form>
 
     <p class="auth-link">
-        Har du inget konto? <a href="{base}/register">Registrera dig</a>!
+        Har du inget konto? <a href="/register">Registrera dig</a>!
     </p>
 
     <p class="auth-link">
-        Du kan läsa <a href="{base}/documents">dokumenten i databasen</a> som gäst.
+        Du kan läsa <a href="/documents">dokumenten i databasen</a> som gäst.
     </p>
     
 </main>
