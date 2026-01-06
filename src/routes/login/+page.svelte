@@ -5,8 +5,6 @@
     import { API_BASE } from '../../lib/config';
     import { login, isAuthenticated } from '$lib/stores/auth.js';
     import { base } from '$app/paths';
-    export const prerender = true;
-
     import '../../assets/app.css';
 
     let email = '';
@@ -54,6 +52,8 @@
             loading = false;
         }
     }
+
+    export const prerender = true;
 </script>
 
 <svelte:head>
@@ -91,7 +91,7 @@
     </form>
 
     <p class="auth-link">
-        Har du inget konto? <a href="/register">Registrera dig</a>!
+        Har du inget konto? <a href="{base}/register">Registrera dig</a>!
     </p>
 
     <p class="auth-link">

@@ -4,7 +4,6 @@
     import Footer from "../../components/Footer.svelte";
     import '../../assets/app.css';
     import { base } from '$app/paths';
-    import { onMount } from 'svelte';
     export const prerender = true; // Make static
 
     let email = '';
@@ -46,7 +45,7 @@
                 success = true;
 
                 setTimeout(() => {
-                    window.location.href = "/login";
+                    window.location.href = `${base}/login`;
                 }, 2000);
             } else {
                 error = 'Registreringen misslyckades'
