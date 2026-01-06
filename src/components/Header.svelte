@@ -10,5 +10,6 @@
         <a href="{base}/documents/list"> Lista</a>
         <a href="{base}/documents/create"> Nytt dokument</a>
         <a href="{base}/login"> Logga in</a>
+        <a href="{base}/register"> Ny användare</a>
     </navigation>
 </header>
