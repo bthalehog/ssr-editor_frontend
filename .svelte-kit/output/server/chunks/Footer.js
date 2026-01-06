@@ -7,7 +7,7 @@ import "@sveltejs/kit/internal/server";
 import "./state.svelte.js";
 import "clsx";
 function Header($$renderer) {
-  $$renderer.push(`<header><h1>SSR Editor</h1> <navigation><a${attr("href", `${stringify(base)}/documents`)}>Start</a> <a${attr("href", `${stringify(base)}/documents/list`)}>Lista</a> <a${attr("href", `${stringify(base)}/documents/create`)}>Nytt dokument</a> <a${attr("href", `${stringify(base)}/login`)}>Logga in</a></navigation></header>`);
+  $$renderer.push(`<header><h1>SSR Editor</h1> <navigation><a${attr("href", `${stringify(base)}/documents`)}>Start</a> <a${attr("href", `${stringify(base)}/documents/list`)}>Lista</a> <a${attr("href", `${stringify(base)}/documents/create`)}>Nytt dokument</a> <a${attr("href", `${stringify(base)}/login`)}>Logga in</a> <a${attr("href", `${stringify(base)}/register`)}>Ny användare</a></navigation></header>`);
 }
 function Footer($$renderer) {
   $$renderer.push(`<footer><p class="copyright">© Alexander Högfeldt</p></footer>`);
