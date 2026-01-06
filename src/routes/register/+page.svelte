@@ -94,7 +94,7 @@
             <input type="confirmPassword" id="confirmPassword" bind:value={confirmPassword} required disabled={loading || success} placeholder="Upprepa lösenord"/>
         </div>
 
-        <button type="sumbit" disabled={loading || success} class="submit-btn">
+        <button type="submit" disabled={loading || success} class="submit-btn">
             {loading ? "Registrerar..." : success ? "Registrerad!" : "Registrera"}
         </button>
     </form>

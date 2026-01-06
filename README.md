@@ -32,6 +32,9 @@ This repository was born as part if the deployment of the ssr-editor express app
 20251212 New tag, v2.0.5 "Pushing sockets edit frontend"  
 20251213 New tag, v2.0.6 "Pushing comments (socket)"  
 20250106 New tag, v2.0.7 "Trying to fix clusters and rehost"  
+20250106 New tag, v2.0.8 "Adding fix for login and register"
+20250106 New tag, v2.0.9 "login and register"
+20250106 New tag, v2.0.10 "Trying to fix clusters and rehost"  
 
 ## LESSONS LEARNT
 To read about the progress made in each part of the course please refer to the [report](https://github.com/bthalehog/ssr-editor/alhf24.md).
