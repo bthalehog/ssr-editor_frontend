@@ -47,6 +47,10 @@
     "file": "chunks/environment.js",
     "name": "environment"
   },
+  "_equality.js": {
+    "file": "chunks/equality.js",
+    "name": "equality"
+  },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
@@ -55,15 +59,15 @@
     "file": "chunks/index.js",
     "name": "index",
     "imports": [
-      "_context.js"
+      "_context.js",
+      "_equality.js"
     ]
   },
   "_index2.js": {
     "file": "chunks/index2.js",
     "name": "index",
     "imports": [
-      "_context.js",
-      "_server.js"
+      "_context.js"
     ]
   },
   "_internal.js": {
@@ -71,8 +75,9 @@
     "name": "internal",
     "imports": [
       "_index2.js",
-      "_context.js",
       "_environment.js",
+      "_context.js",
+      "_equality.js",
       "_server.js"
     ]
   },
@@ -105,8 +110,8 @@
     "isEntry": true,
     "imports": [
       "_shared.js",
-      "_server.js",
-      "_environment.js"
+      "_environment.js",
+      "_server.js"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
@@ -134,6 +139,7 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
+      "_environment.js",
       "_server.js",
       "_shared.js",
       "_exports.js",

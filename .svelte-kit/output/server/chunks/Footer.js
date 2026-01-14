@@ -1,4 +1,4 @@
-import { X as attr, _ as stringify } from "./index2.js";
+import { y as attr, z as stringify } from "./index2.js";
 import "@sveltejs/kit/internal";
 import "./exports.js";
 import "./utils.js";

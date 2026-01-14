@@ -1,5 +1,5 @@
-import { V as head } from "../../../../chunks/index2.js";
-import { b as ssr_context } from "../../../../chunks/context.js";
+import { x as head } from "../../../../chunks/index2.js";
+import { l as ssr_context } from "../../../../chunks/context.js";
 import { H as Header, F as Footer } from "../../../../chunks/Footer.js";
 import "@sveltejs/kit/internal";
 import "../../../../chunks/exports.js";

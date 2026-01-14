@@ -1,4 +1,3 @@
-const BROWSER = false;
 let base = "/ssr-editor_frontend";
 let assets = base;
 const app_dir = "_app";
@@ -16,7 +15,6 @@ function set_assets(path) {
   assets = initial.assets = path;
 }
 export {
-  BROWSER as B,
   assets as a,
   base as b,
   app_dir as c,

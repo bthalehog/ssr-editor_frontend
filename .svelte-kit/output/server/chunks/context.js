@@ -23,15 +23,6 @@ function deferred() {
   });
   return { promise, resolve, reject };
 }
-function equals(value) {
-  return value === this.v;
-}
-function safe_not_equal(a, b) {
-  return a != a ? b == b : a !== b || a !== null && typeof a === "object" || typeof a === "function";
-}
-function safe_equals(value) {
-  return !safe_not_equal(value, this.v);
-}
 function lifecycle_outside_component(name) {
   {
     throw new Error(`https://svelte.dev/e/lifecycle_outside_component`);
@@ -94,26 +85,23 @@ function get_parent_context(ssr_context2) {
   return null;
 }
 export {
-  array_from as a,
-  ssr_context as b,
-  safe_not_equal as c,
+  deferred as a,
+  array_prototype as b,
+  get_prototype_of as c,
   define_property as d,
-  escape_html as e,
-  deferred as f,
-  getContext as g,
-  safe_equals as h,
+  is_extensible as e,
+  index_of as f,
+  get_descriptor as g,
+  array_from as h,
   is_array as i,
-  equals as j,
-  array_prototype as k,
-  get_descriptor as l,
-  get_prototype_of as m,
+  getContext as j,
+  escape_html as k,
+  ssr_context as l,
+  set_ssr_context as m,
   noop as n,
   object_prototype as o,
-  is_extensible as p,
-  index_of as q,
+  push as p,
+  pop as q,
   run_all as r,
-  setContext as s,
-  set_ssr_context as t,
-  push as u,
-  pop as v
+  setContext as s
 };

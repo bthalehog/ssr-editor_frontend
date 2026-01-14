@@ -1,4 +1,5 @@
-import { n as noop, c as safe_not_equal } from "./context.js";
+import { n as noop } from "./context.js";
+import { a as safe_not_equal } from "./equality.js";
 import "clsx";
 const subscriber_queue = [];
 function readable(value, start) {
