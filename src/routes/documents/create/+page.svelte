@@ -82,7 +82,7 @@
 <main>
     <h2>Skapa dokument</h2>
 
-    {#if !$isAuth}
+    {#if !isAuth}
         <div class="auth-required">
             <p>Du måste vara inloggad för att skapa, redigera eller ta bort dokument.</p>
             <a href="/login">Logga in</a>
