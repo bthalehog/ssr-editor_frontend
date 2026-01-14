@@ -11,7 +11,7 @@ function _page($$renderer, $$props) {
       $$renderer3.push(`<meta charset="utf-8"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>`);
     });
     Header($$renderer2);
-    $$renderer2.push(`<!----> <main><h2>Dokumentdatabasen</h2> <p>Den här dokumentdatabaen kan användas för att skapa, redigera, läsa, radera dokument. Använd menyvalen för att fortsätta.</p> `);
+    $$renderer2.push(`<!----> <main><h2>Dokumentdatabasen</h2> <p>Den här dokumentdatabasen kan användas för att skapa, redigera, läsa, radera dokument. Använd menyvalen för att fortsätta.</p> `);
     {
       $$renderer2.push("<!--[-->");
       $$renderer2.push(`<p>Loading...</p>`);

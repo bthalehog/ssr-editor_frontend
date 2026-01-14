@@ -5,6 +5,7 @@
     import Footer from '../../../components/Footer.svelte';
     import { API_BASE } from '../../../lib/config.js';
     import { isAuthenticated, getToken } from '$lib/stores/auth.js';
+    import { base } from '$app/paths';
 
     let title = '';
     let content = '';
@@ -85,7 +86,7 @@
     {#if !isAuth}
         <div class="auth-required">
             <p>Du måste vara inloggad för att skapa, redigera eller ta bort dokument.</p>
-            <a href="/login">Logga in</a>
+            <a href="{base}/login">Logga in</a>
         </div>
     {:else}
         {#if success}

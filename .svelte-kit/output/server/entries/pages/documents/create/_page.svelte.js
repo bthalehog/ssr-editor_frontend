@@ -1,7 +1,9 @@
-import { x as head, y as attr } from "../../../../chunks/index2.js";
+import { x as head, y as attr, z as stringify } from "../../../../chunks/index2.js";
 import { H as Header, F as Footer } from "../../../../chunks/Footer.js";
 import "../../../../chunks/config.js";
 import { i as isAuthenticated } from "../../../../chunks/auth.js";
+import { b as base } from "../../../../chunks/server.js";
+import "@sveltejs/kit/internal/server";
 import { k as escape_html } from "../../../../chunks/context.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
@@ -22,7 +24,7 @@ function _page($$renderer, $$props) {
     $$renderer2.push(`<!----> <main><h2>Skapa dokument</h2> `);
     if (!isAuth) {
       $$renderer2.push("<!--[-->");
-      $$renderer2.push(`<div class="auth-required"><p>Du måste vara inloggad för att skapa, redigera eller ta bort dokument.</p> <a href="/login">Logga in</a></div>`);
+      $$renderer2.push(`<div class="auth-required"><p>Du måste vara inloggad för att skapa, redigera eller ta bort dokument.</p> <a${attr("href", `${stringify(base)}/login`)}>Logga in</a></div>`);
     } else {
       $$renderer2.push("<!--[!-->");
       {
