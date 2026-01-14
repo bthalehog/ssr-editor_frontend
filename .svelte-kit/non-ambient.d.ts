@@ -27,7 +27,7 @@ export {};
 
 declare module "$app/types" {
 	export interface AppTypes {
-		RouteId(): "/" | "/api" | "/api/documents" | "/documents" | "/documents/create" | "/documents/list" | "/documents/[id]";
+		RouteId(): "/" | "/api" | "/api/documents" | "/documents" | "/documents/create" | "/documents/list" | "/documents/[id]" | "/login" | "/register";
 		RouteParams(): {
 			"/documents/[id]": { id: string }
 		};
@@ -38,9 +38,11 @@ declare module "$app/types" {
 			"/documents": { id?: string };
 			"/documents/create": Record<string, never>;
 			"/documents/list": Record<string, never>;
-			"/documents/[id]": { id: string }
+			"/documents/[id]": { id: string };
+			"/login": Record<string, never>;
+			"/register": Record<string, never>
 		};
-		Pathname(): "/" | "/api" | "/api/" | "/api/documents" | "/api/documents/" | "/documents" | "/documents/" | "/documents/create" | "/documents/create/" | "/documents/list" | "/documents/list/" | `/documents/${string}` & {} | `/documents/${string}/` & {};
+		Pathname(): "/" | "/api" | "/api/" | "/api/documents" | "/api/documents/" | "/documents" | "/documents/" | "/documents/create" | "/documents/create/" | "/documents/list" | "/documents/list/" | `/documents/${string}` & {} | `/documents/${string}/` & {} | "/login" | "/login/" | "/register" | "/register/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
 		Asset(): "/404.html" | "/favicon.png" | string & {};
 	}

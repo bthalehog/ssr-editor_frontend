@@ -6,5 +6,7 @@
 	"/documents": [],
 	"/documents/create": [],
 	"/documents/list": [],
-	"/documents/[id]": []
+	"/documents/[id]": [],
+	"/login": [],
+	"/register": []
 }

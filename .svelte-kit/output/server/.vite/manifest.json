@@ -28,6 +28,13 @@
       "_app/immutable/assets/Footer.CmYLLcsZ.css"
     ]
   },
+  "_auth.js": {
+    "file": "chunks/auth.js",
+    "name": "auth",
+    "imports": [
+      "_index.js"
+    ]
+  },
   "_config.js": {
     "file": "chunks/config.js",
     "name": "config"
@@ -52,7 +59,7 @@
     "file": "chunks/index.js",
     "name": "index",
     "imports": [
-      "_utils2.js",
+      "_context.js",
       "_equality.js"
     ]
   },
@@ -69,9 +76,8 @@
     "imports": [
       "_index2.js",
       "_environment.js",
-      "_utils2.js",
-      "_equality.js",
       "_context.js",
+      "_equality.js",
       "_server.js"
     ]
   },
@@ -90,15 +96,11 @@
     "file": "chunks/state.svelte.js",
     "name": "state.svelte",
     "imports": [
-      "_utils2.js"
+      "_context.js"
     ]
   },
   "_utils.js": {
     "file": "chunks/utils.js",
-    "name": "utils"
-  },
-  "_utils2.js": {
-    "file": "chunks/utils2.js",
     "name": "utils"
   },
   "node_modules/@sveltejs/kit/src/runtime/app/server/remote/index.js": {
@@ -108,7 +110,6 @@
     "isEntry": true,
     "imports": [
       "_shared.js",
-      "_utils2.js",
       "_environment.js",
       "_server.js"
     ]
@@ -140,11 +141,11 @@
     "imports": [
       "_environment.js",
       "_server.js",
+      "_shared.js",
       "_exports.js",
       "_utils.js",
       "_index.js",
-      "_internal.js",
-      "_shared.js"
+      "_internal.js"
     ]
   },
   "src/routes/+page.svelte": {
@@ -185,11 +186,13 @@
     "isEntry": true,
     "imports": [
       "_index2.js",
+      "_context.js",
       "_Footer.js",
       "_exports.js",
       "_utils.js",
       "_state.svelte.js",
-      "_config.js"
+      "_config.js",
+      "_auth.js"
     ]
   },
   "src/routes/documents/create/+page.svelte": {
@@ -201,6 +204,8 @@
       "_index2.js",
       "_Footer.js",
       "_config.js",
+      "_auth.js",
+      "_server.js",
       "_context.js"
     ]
   },
@@ -213,6 +218,36 @@
       "_index2.js",
       "_Footer.js",
       "_config.js"
+    ]
+  },
+  "src/routes/login/+page.svelte": {
+    "file": "entries/pages/login/_page.svelte.js",
+    "name": "entries/pages/login/_page.svelte",
+    "src": "src/routes/login/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_Footer.js",
+      "_config.js",
+      "_auth.js",
+      "_server.js",
+      "_context.js"
+    ]
+  },
+  "src/routes/register/+page.svelte": {
+    "file": "entries/pages/register/_page.svelte.js",
+    "name": "entries/pages/register/_page.svelte",
+    "src": "src/routes/register/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_config.js",
+      "_Footer.js",
+      "_server.js",
+      "_exports.js",
+      "_utils.js",
+      "_state.svelte.js",
+      "_context.js"
     ]
   }
 }

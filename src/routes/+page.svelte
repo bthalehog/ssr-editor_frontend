@@ -33,7 +33,7 @@
 
 <main>
     <h2>Dokumentdatabasen</h2>
-    <p>Den här dokumentdatabaen kan användas för att skapa, redigera, läsa, radera dokument. Använd menyvalen för att fortsätta.</p>
+    <p>Den här dokumentdatabasen kan användas för att skapa, redigera, läsa, radera dokument. Använd menyvalen för att fortsätta.</p>
     {#if loading}
         <p>Loading...</p>
     {:else if error}

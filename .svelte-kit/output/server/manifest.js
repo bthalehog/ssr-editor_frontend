@@ -10,7 +10,7 @@ return {
 	assets: new Set(["404.html","favicon.png"]),
 	mimeTypes: {".html":"text/html",".png":"image/png"},
 	_: {
-		client: {start:"_app/immutable/entry/start.Dp-pW5fm.js",app:"_app/immutable/entry/app.BUlvxtrK.js",imports:["_app/immutable/entry/start.Dp-pW5fm.js","_app/immutable/chunks/B_kyP1mJ.js","_app/immutable/chunks/z7pBWdeW.js","_app/immutable/chunks/kK4zQf0V.js","_app/immutable/chunks/DgltpEMP.js","_app/immutable/entry/app.BUlvxtrK.js","_app/immutable/chunks/kK4zQf0V.js","_app/immutable/chunks/z7pBWdeW.js","_app/immutable/chunks/DsnmJJEf.js","_app/immutable/chunks/BdqynIpO.js","_app/immutable/chunks/Bq28Yame.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.CLm8L2N1.js",app:"_app/immutable/entry/app.B_H1AhbI.js",imports:["_app/immutable/entry/start.CLm8L2N1.js","_app/immutable/chunks/C4xTKcSv.js","_app/immutable/chunks/BdBSvQfD.js","_app/immutable/chunks/BCGjWiuE.js","_app/immutable/chunks/EL9UFxiU.js","_app/immutable/entry/app.B_H1AhbI.js","_app/immutable/chunks/BdBSvQfD.js","_app/immutable/chunks/g7raxF98.js","_app/immutable/chunks/B6MCMdNV.js","_app/immutable/chunks/BgDj0rgT.js","_app/immutable/chunks/BCGjWiuE.js","_app/immutable/chunks/B_ASS9Ia.js","_app/immutable/chunks/BQHlCIHn.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
@@ -18,7 +18,9 @@ return {
 			__memo(() => import('./nodes/3.js')),
 			__memo(() => import('./nodes/4.js')),
 			__memo(() => import('./nodes/5.js')),
-			__memo(() => import('./nodes/6.js'))
+			__memo(() => import('./nodes/6.js')),
+			__memo(() => import('./nodes/7.js')),
+			__memo(() => import('./nodes/8.js'))
 		],
 		remotes: {
 			
@@ -64,6 +66,20 @@ return {
 				pattern: /^\/documents\/([^/]+?)\/?$/,
 				params: [{"name":"id","optional":false,"rest":false,"chained":false}],
 				page: { layouts: [0,], errors: [1,], leaf: 4 },
+				endpoint: null
+			},
+			{
+				id: "/login",
+				pattern: /^\/login\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 7 },
+				endpoint: null
+			},
+			{
+				id: "/register",
+				pattern: /^\/register\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 8 },
 				endpoint: null
 			}
 		],
